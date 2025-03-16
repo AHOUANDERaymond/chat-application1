@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat - L💞venett</title>
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> -->
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <h1 class="app-name">Chats</h1>
+    
+    <!-- Tabs Navigation -->
+    <div class="tabs">
+        <button class="tab-btn" data-tab="contacts">Unread</button>
+        <button class="tab-btn" data-tab="history">Groups</button>
+        <button class="tab-btn" data-tab="history">Status</button>
+        <!-- <button class="tab-btn active" data-tab="chats">Chats</button> -->
+      </div>
+
+       <!-- profile image in the navbar -->
+        <div class="profile-menu">
+            <i class="fas fa-user-circle default-icon" id="default-icon"></i>
+            <img src="" alt="Profile" class="profile-image" id="profile-btn" style="display: none;">
+            <div class="profile-dropdown" id="profile-dropdown" style="display: none;">
+              <a href="#" id="change-profile-image">Change Profile Image</a>
+              <input type="file" id="profile-image-upload" accept="image/*" style="display: none;">
+              <a href="#" id="reset-profile-image">Reset to Default</a>
+              <a href="#" id="delete-account">Delete Account</a>
+              <a href="#" id="logout">Logout</a>
+            </div>
+          </div>
+  </nav>
+
+   <!-- Chat Container -->
+   <div class="chat-container">
+    <!-- Search Bar -->
+    <div class="search-bar">
+        <i class="fas fa-search search-icon"></i>
+      <input type="text" id="search-input" placeholder="Search messages, files, or media...">
+      <i class="fas fa-paper-plane plane-icon"></i>
+    </div>
+
+    <!-- Add this inside the chat-container div -->
+    <div class="message-input-container">
+        <input type="text" id="message-input" placeholder="Type a message..." />
+        <button id="send-button">Send</button>
+    </div><!-- Add this inside the chat-container div -->
+    <div class="message-input-container">
+        <input type="text" id="message-input" placeholder="Type a message..." />
+        <button id="send-button">Send</button>
+    </div>
+
+    <script type="module" src="firebase-init.js"></script>
+    <script src="main.js" defer></script>
+    <script src="chat.js" defer></script>
+    <!-- <script type="module" src="main.js"></script> -->
+</body>
+</html>
+
+
+

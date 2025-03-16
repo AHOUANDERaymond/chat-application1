@@ -1,0 +1,506 @@
+
+
+/* General Styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  height: 100%;
+  overflow: hidden; /* Prevent scrolling */
+}
+
+/* Navbar Styles */
+.navbar {
+  position: fixed; /* Fixed position at the top */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px; /* Adjust height as needed */
+  z-index: 2; /* Ensure it's above the overlay and background */
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Push items to the edges */
+  padding: 0 20px; /* Add padding for spacing */
+  box-sizing: border-box; /* Include padding in width calculation */
+  background-color: #fff;
+}
+
+/* App Name/Logo in Navbar */
+.navbar .app-name {
+  font-size: 24px; /* Increase font size for visibility */
+  font-weight: bold;
+  color: #000; /* White text color */
+  margin: 0; /* Remove default margin */
+}
+
+/*  Tabs  */
+.tabs {
+  margin-left: auto; /* Push tabs to the far right */
+  display: flex;
+  gap: 10px; /* Add space between buttons */
+  padding-right: 20px; /* Add padding for spacing */
+}
+
+.tab-btn {
+  padding: 8px 16px; /* Adjust padding for buttons */
+  background-color: #007bff; /* Blue background */
+  color: white; /* White text */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.tab-btn:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+.tab-btn.active {
+  background-color: #0056b3; /* Darker blue for active tab */
+}
+
+/* Hamburger Menu */
+.hamburger-menu {
+  display: flex; /* Ensure it behaves as a flex item */
+  align-items: center; /* Center the icon vertically */
+  cursor: pointer; /* Make it clickable */
+  margin-left: auto; /* Push it to the far right */
+}
+
+.hamburger-icon {
+  font-size: 24px; /* Adjust size as needed */
+  color: #000; /* Icon color */
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 50px;
+  right: 10px;
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  padding: 10px;
+  z-index: 1000; /* Ensure it appears above other elements */
+}
+
+.dropdown-menu a {
+  display: block;
+  margin: 5px 0;
+  text-decoration: none;
+  color: #333;
+}
+
+.dropdown-menu a:hover {
+  color: #007bff;
+}
+
+/* Welcome Container */
+.welcome-container {
+  position: relative;
+  height: 100vh; /* Full screen height */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  color: #fff;
+  padding-top: 60px; /* Push content down by the height of the navbar */
+  box-sizing: border-box; /* Include padding in height calculation */
+}
+
+/* Background Image */
+.background-image {
+  position: absolute;
+  top: 0; /* Start from the top of the viewport */
+  left: 0;
+  width: 100%;
+  height: 100%; /* Cover the entire viewport */
+  background-image: url('IMG-20250315-WA0104.jpg'); /* Link to your image */
+  background-size: cover; /* Ensure the image covers the entire screen */
+  background-position: center; /* Center the image */
+  z-index: -1; /* Place it behind other content */
+}
+
+/* Overlay */
+.overlay {
+  position: absolute;
+  top: 0; /* Start from the top of the viewport */
+  left: 0;
+  width: 100%;
+  height: 100%; /* Cover the entire viewport */
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+  z-index: 0; /* Place it above the background image but below other content */
+}
+
+/* Welcome Message */
+.welcome-message {
+  font-size: 1.5rem; /* Use rem for scalable font size */
+  color: #fff;
+  padding: 0 20px;
+  z-index: 1;
+  max-width: 600px; /* Limit width for better readability */
+  text-align: left;
+  line-height: 1.5;
+  white-space: normal;
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 768px) {
+  .welcome-message {
+      font-size: 1.5rem; /* Smaller font size for mobile */
+      max-width: 90%; /* Allow more width for smaller screens */
+  }
+}
+
+/* Action Buttons */
+.action-buttons {
+  position: absolute;
+  bottom: 10%; /* Position relative to viewport height */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Adjust for exact centering */
+  width: 100%;
+  max-width: 400px;
+  padding: 0 20px; /* Add padding for smaller screens */
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center; /* Center buttons horizontally */
+}
+
+.btn {
+  background-color: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+  padding: 12px 20px; /* Fixed padding for consistency */
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 1rem; /* Fixed font size for readability */
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  width: 100%; /* Full width by default */
+  max-width: 300px; /* Limit maximum width for larger screens */
+  margin: 0 auto; /* Center the button horizontally */
+  box-sizing: border-box; /* Ensure padding is included in width calculation */
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 768px) {
+  .btn {
+      font-size: 0.9rem; /* Slightly smaller font size for mobile */
+      padding: 10px 15px; /* Adjust padding for smaller screens */
+  }
+}
+
+.btn:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+/* Specific Button Styles */
+.signup-btn {
+  background-color: #FF5864; 
+  border: none;
+}
+
+.signup-btn:hover {
+  background-color: #e54b56; /* Darker red on hover */
+  color: #fff;
+}
+
+.login-btn {
+  background-color: transparent;
+  border: 2px solid #fff;
+}
+
+.login-btn:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+/* Signup Container */
+.signup-container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.signup-container h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Form Group */
+.form-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #555;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.form-group input:focus {
+  border-color: #FF5864;
+  outline: none;
+}
+
+.form-group small {
+  display: block;
+  margin-top: 5px;
+  font-size: 0.8rem;
+  color: #777;
+}
+
+/* Submit Button */
+.btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #FF5864;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #e54b56;
+}
+
+/* Link to Login Page */
+.signup-container p {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.signup-container a {
+  color: #FF5864;
+  text-decoration: none;
+}
+
+.signup-container a:hover {
+  text-decoration: underline;
+}
+
+/* Signup Container Animation */
+.signup-container {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Button Hover Animation */
+.btn {
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #e54b56;
+  transform: scale(1.05);
+}
+
+/* Input Focus Animation */
+.form-group input:focus {
+  border-color: #FF5864;
+  box-shadow: 0 0 5px rgba(255, 88, 100, 0.5);
+}
+
+/* Login Container */
+.login-container {
+  max-width: 400px; /* Limit the width of the container */ 
+  margin: 50px auto; /* Center the container horizontally */ 
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+} 
+
+/* Chat Container */
+.chat-container {
+  padding: 20px;
+  overflow-y: auto;
+  height: calc(100vh - 120px); /* Adjust height to fit above the input container */
+}
+
+/* Message Styling */
+.message {
+  background-color: #f1f1f1;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  max-width: 70%;
+}
+
+.message strong {
+  color: #007bff;
+}
+
+/* Search Bar */
+.search-bar {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px; /* Adjust margin as needed */
+  padding: 10px; /* Add internal spacing */
+}
+
+#search-input {
+  width: 90%; /* Adjust width as needed */
+  padding: 10px 16px 10px 40px; /* Add left padding for the icon */
+  border: 1px solid #ccc; /* Light gray border */
+  border-radius: 20px; /* Rounded corners */
+  font-size: 14px; /* Font size */
+  outline: none; /* Remove default outline */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+}
+
+#search-input::placeholder {
+  color: #999; /* Light gray placeholder text */
+}
+
+#search-input:focus {
+  border-color: #007bff; /* Blue border on focus */
+  box-shadow: 0 2px 5px rgba(0, 123, 255, 0.25); /* Blue shadow on focus */
+}
+
+/* Search Icon */
+.search-icon {
+  position: absolute;
+  left: 40px; /* Adjust position as needed */
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999; /* Light gray icon color */
+  font-size: 16px; /* Icon size */
+  pointer-events: none; /* Make the icon non-clickable */
+}
+
+/* Plane Icon */
+.plane-icon {
+  margin-left: 10px; /* Space between search bar and plane icon */
+  color: #007bff; /* Blue icon color */
+  font-size: 20px; /* Icon size */
+  cursor: pointer; /* Make the icon clickable */
+  transition: color 0.3s ease; /* Smooth transition */
+  transform: translateY(6px); /* Move the icon down slightly (if needed) */
+}
+
+.plane-icon:hover {
+  color: #0056b3; /* Darker blue on hover */
+}
+
+@media (max-width: 768px) {
+  .search-bar {
+    margin: 10px 0; /* Reduce margin for smaller screens */
+    padding-top: 10px; /* Reduce padding for smaller screens */
+  }
+}
+
+/* Profile image */
+.profile-menu {
+  position: relative;
+  display: inline-block;
+}
+
+.default-icon {
+  font-size: 40px;
+  color: #ccc; /* Light gray color */
+  cursor: pointer;
+}
+
+.profile-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.profile-dropdown {
+  display: none; /* Hidden by default */
+  position: absolute;
+  top: 50px; /* Position below the profile icon */
+  right: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1001; /* Ensure it appears above other elements */
+  min-width: 150px; /* Adjust width as needed */
+}
+
+.profile-dropdown a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: #333;
+}
+
+.profile-dropdown a:hover {
+  background-color: #f1f1f1;
+}
+
+/* Message Input Container */
+.message-input-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  padding: 10px;
+  display: flex;
+  gap: 10px;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#message-input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  outline: none;
+}
+
+#send-button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+#send-button:hover {
+  background-color: #0056b3;
+}
+
