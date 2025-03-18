@@ -1,3 +1,5 @@
+chat.html
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,7 +39,7 @@
 
    <!-- Chat Container -->
    <div class="chat-container">
-    <!-- Search Bar -->
+    <div class="chat-container" id="chat-container"></div>
     <div class="search-bar">
         <i class="fas fa-search search-icon"></i>
       <input type="text" id="search-input" placeholder="Search messages, files, or media...">
@@ -46,20 +48,37 @@
 
     <!-- Add this inside the chat-container div -->
     <div class="message-input-container">
+        <!-- Emoji Picker -->
+        <button id="emoji-picker-button">😀</button>
+        <div id="emoji-picker" style="display: none;"></div>
+        <!-- Message Input Field -->
         <input type="text" id="message-input" placeholder="Type a message..." />
+            <!-- Voice Messages -->
+            <button id="record-button">🎤</button><!-- Send Button -->
         <button id="send-button">Send</button>
-    </div><!-- Add this inside the chat-container div -->
-    <div class="message-input-container">
-        <input type="text" id="message-input" placeholder="Type a message..." />
-        <button id="send-button">Send</button>
+    </div>
+
+    <!-- File and Media Sharing -->
+        <input type="file" id="file-input" style="display: none;">
+        <button id="file-upload-button">📁</button>
+
+        <!-- delete or edit messages -->
+    <div class="message">
+      <strong>${sender}:</strong> ${message}
+      <button class="edit-button">Edit</button>
+      <button class="delete-button">Delete</button>
+    </div>
+    
+    <!-- Add Profile Fields: -->
+    <div class="profile">
+      <input type="text" id="name" placeholder="Name">
+      <input type="file" id="profile-picture" accept="image/*">
+      <input type="text" id="status" placeholder="Status">
+      <button id="save-profile">Save</button>
     </div>
 
     <script type="module" src="firebase-init.js"></script>
     <script src="main.js" defer></script>
-    <script src="chat.js" defer></script>
-    <!-- <script type="module" src="main.js"></script> -->
+    <script type="module" src="chat.js"></script>
 </body>
 </html>
-
-
-

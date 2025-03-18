@@ -1,4 +1,4 @@
-
+main.js
 
 // Hamburger Menu Toggle
 document.addEventListener('DOMContentLoaded', () => {
@@ -8,14 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Tab Switching Logic
-  /* document.querySelectorAll('.tab-btn').forEach(button => {
-    button.addEventListener('click', () => {
-      document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
-      button.classList.add('active');
-    });
-  });
-   */
   // Profile Dropdown
   const profileBtn = document.getElementById('profile-btn');
   const profileDropdown = document.getElementById('profile-dropdown');

@@ -1,4 +1,4 @@
-
+main.css
 
 /* General Styles */
 body, html {
@@ -114,7 +114,7 @@ body, html {
   left: 0;
   width: 100%;
   height: 100%; /* Cover the entire viewport */
-  background-image: url('IMG-20250315-WA0104.jpg'); /* Link to your image */
+  background-image: url('images/pexels-pixabay-208006.jpg'); /* Link to your image */
   background-size: cover; /* Ensure the image covers the entire screen */
   background-position: center; /* Center the image */
   z-index: -1; /* Place it behind other content */
@@ -399,7 +399,7 @@ body, html {
   position: absolute;
   left: 40px; /* Adjust position as needed */
   top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(-60%);
   color: #999; /* Light gray icon color */
   font-size: 16px; /* Icon size */
   pointer-events: none; /* Make the icon non-clickable */
@@ -412,7 +412,7 @@ body, html {
   font-size: 20px; /* Icon size */
   cursor: pointer; /* Make the icon clickable */
   transition: color 0.3s ease; /* Smooth transition */
-  transform: translateY(6px); /* Move the icon down slightly (if needed) */
+  transform: translateY(15px); /* Move the icon down slightly (if needed) */
 }
 
 .plane-icon:hover {
@@ -460,10 +460,14 @@ body, html {
 }
 
 .profile-dropdown a {
-  display: block;
+  display: none;
   padding: 10px;
   text-decoration: none;
   color: #333;
+}
+
+.profile-dropdown.visible {
+  display: block;
 }
 
 .profile-dropdown a:hover {
@@ -504,3 +508,55 @@ body, html {
   background-color: #0056b3;
 }
 
+.user-status {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #333;
+}
+
+.username {
+  margin-right: 10px;
+}
+
+.status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.status-dot.online {
+  background-color: green;
+}
+
+.status-dot.offline {
+  background-color: gray;
+}
+
+/* Emoji Picker Button */
+#emoji-picker-button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 5px;
+  margin-right: 10px;
+}
+
+#emoji-picker-button:hover {
+  opacity: 0.8;
+}
+
+/* Emoji Picker Container */
+#emoji-picker {
+  position: absolute;
+  bottom: 60px; /* Adjust based on your layout */
+  right: 20px; /* Adjust based on your layout */
+  z-index: 1000; /* Ensure it appears above other elements */
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
